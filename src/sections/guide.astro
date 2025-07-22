@@ -1,0 +1,266 @@
+---
+import Copy from "@/icons/Copy.astro";
+import MaterialSymbolsDownload from "@/icons/MaterialSymbolsDownload.astro";
+---
+
+<section id="guide">
+  <div class="guide__container container grid">
+    <!-- step de css -->
+    <div class="step step-1">
+      <h2 class="step__title">
+        <span class="step__title__number">1</span>
+        Agrega el css en el head de tu página
+      </h2>
+
+      <div class="step__code-wrapper">
+        <pre>
+          <code class="language-css">
+            &lt;link rel="stylesheet" href="./whatsapp.css"&gt
+          </code>
+        </pre>
+        <div id="copy-button" class="step__code-wrapper__copy">
+          <Copy class="step__code-wrapper__copy__icon" />
+          <p>Copiar</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- step de js -->
+    <div class="step step-2">
+      <h2 class="step__title">
+        <span class="step__title__number">2</span>
+        Agrega el script en tu archivo html antes de cerrar el body
+      </h2>
+      <div class="step__code-wrapper">
+        <pre>
+          <code class="language-js">
+            &lt;script src="./whatsapp.js"&gt;&lt;/script&gt;
+          </code>
+        </pre>
+        <div id="copy-button" class="step__code-wrapper__copy">
+          <Copy class="step__code-wrapper__copy__icon" />
+          <p>Copiar</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- step de function-->
+    <div class="step step-2">
+      <h2 class="step__title">
+        <span class="step__title__number">3</span>
+        Inicializar la funcion en tu archivo js
+      </h2>
+
+      <div class="step__code-wrapper">
+        <pre>
+          <code class="language-js-funtions"> 
+        initWhatsappButton(&lcub; 
+          phone: '999999999', 
+          country: 'PE', 
+          message: 'Hola, quiero más información.', 
+          content: 'Soporte', 
+          theme: 3
+        &rcub;); 
+          </code>
+        </pre>
+          
+
+
+        <div id="copy-button" class="step__code-wrapper__copy">
+          <Copy class="step__code-wrapper__copy__icon" />
+          <p>Copiar</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="downloads">
+  <div class="downloads__container container">
+    <h2 class="downloads__title">Descargar archivos</h2>
+    <div class="downloads__buttons ">
+      <a href="/whatsapp.css" download class="downloads__button downloads__button--css">
+        <MaterialSymbolsDownload />
+        Descargar CSS
+      </a>
+      <a href="/whatsapp.js" download class="downloads__button downloads__button--js">
+        <MaterialSymbolsDownload />
+        Descargar JS
+      </a>
+    </div>
+
+    <div>
+      <table class="downloads__table">
+        <thead>
+          <tr>
+            <th>Parámetro</th>
+            <th>Tipo</th>
+            <th>Descripción </th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>phone</td>
+          <td>string</td>
+          <td>Número local SIN prefijo internacional</td>
+        </tr>
+        <tr>
+          <td>country</td>
+          <td>string</td>
+          <td>Código ISO-2 del país (ej: PE, MX, US)</td>
+        </tr>
+        <tr>
+          <td>message</td>
+          <td>string</td>
+          <td>Mensaje prellenado opcional</td>
+        </tr>
+        <tr>
+          <td>content</td>
+          <td>string</td>
+          <td>	Texto visible en el botón</td>
+        </tr>
+        <tr>
+          <td>theme</td>
+          <td>number</td>
+          <td>Tema visual (del 1 al 6)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  
+</section>
+
+
+<style>
+  .guide__container{
+    gap: 4rem;
+  }
+  .step__title{
+    margin-bottom: 1rem;
+  }
+  .step__title__number {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step__code-wrapper {
+    background-color: rgb(17 24 39);
+    color: rgb(74 222 128);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .step__code-wrapper__copy {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .step__code-wrapper__copy:hover {
+    border: 1px solid var(--accent-color);
+  }
+  .step__code-wrapper__copy p {
+    font-size: 1rem;
+  }
+  .downloads__title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .downloads__buttons{
+    display: flex;
+    gap: 1rem;
+    margin-inline: auto;
+    max-width: fit-content;
+  }
+  .downloads__button{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .downloads__button:hover {
+    background-color: var(--white-color);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+  }
+
+
+  .downloads__table{
+    border: 1px solid var(--accent-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  .downloads__table th{
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 0.5rem;
+    width: 200px;
+  }
+  .downloads__table td{
+    padding: 0.5rem;
+    width: 200px;
+    border: 1px solid var(--accent-color);
+  }
+</style>
+
+<script>
+  const $copyButtons = document.querySelectorAll('#copy-button') as NodeListOf<Element>;
+  const $code = document.querySelectorAll('.step__code-wrapper code') as NodeListOf<Element>;
+  const $p = document.querySelectorAll('.step__code-wrapper__copy p') as NodeListOf<Element>;
+  
+  
+  // Busca todos los botones de copiar
+  $copyButtons.forEach((button, i) => {
+    
+    button.addEventListener('click', () => {
+      // Busca el code dentro del wrapper del botón
+      const code = $code[i];
+      if (!code) return;
+
+      // Crea un rango y copia su texto
+      const text = code.textContent || '';
+      console.log(text);
+
+      navigator.clipboard.writeText(text).then(() => {
+        
+        // Feedback visual
+        $p[i].textContent = 'Copiado!';
+
+        setTimeout(() => {
+          $p[i].textContent = 'Copiar';
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar:', err);
+      });
+    });
+  });
+</script>

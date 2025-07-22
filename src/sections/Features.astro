@@ -1,0 +1,95 @@
+---
+import FeatureCard from "@/components/FeatureCard.astro";
+import Code from "@/icons/Code.astro";
+import Palette from "@/icons/Palette.astro";
+import Chat from "@/icons/Chat.astro";
+import Rayo from "@/icons/Rayo.astro";
+import Mobile from "@/icons/mobile.astro";
+import Users from "@/icons/Users.astro";
+---
+
+<section class="features">
+  <h2 class="section__title">¿Por Qué <span>Float WhatsApp Widget?</span></h2>
+  <p class="section__subtitle">Características que hacen la diferencia</p>
+
+  <div class="features__container container grid">
+    <div class="features-section__grid grid">
+
+      <!-- Feature Card 1: Facil Integracion -->
+      <FeatureCard
+            icon={Code}
+            title="Facil Integracion"
+            description="Añade el botón con una línea de código simple. No requiere librerías complejas ni configuraciones extensas."
+      />
+      <!-- Feature Card 2: Totalmente Personalizable -->
+      <FeatureCard
+            icon={Palette}
+            title="Totalmente Personalizable"
+            description="Adapta el botón a la estética de tu marca con múltiples opciones de personalización."
+      />
+
+      <!-- Feature Card 3: Comunicacion Directa -->
+      <FeatureCard
+            icon={Chat}
+            title="Comunicacion Directa"
+            description="Permite a tus clientes contactarte al instante vía WhatsApp sin complicaciones."
+      />
+
+      <!-- Feature Card 4: Ligero y Rapido -->
+      <FeatureCard
+            icon={Rayo}
+            title="Ligero y Rapido"
+            description="Optimizado para no afectar el rendimiento de tu sitio web. Carga instantánea."
+      />
+
+      <!-- Feature Card 5: Compatible con Todos los Dispositivos -->
+      <FeatureCard
+            icon={Mobile}
+            title="Compatible con Todos los Dispositivos"
+            description="Diseño responsivo que se ve genial en cualquier pantalla, móvil o desktop."
+      />
+
+      <!-- Feature Card 6: Mejora la Experiencia del Usuario -->
+      <FeatureCard
+            icon={Users}
+            title="Mejora la Experiencia del Usuario"
+            description="Optimizado para no afectar el rendimiento de tu sitio web. Carga instantánea."
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+    .features{
+        padding-bottom: 5rem;
+    }
+    /* Grid para las tarjetas de características */
+  .features-section__grid {
+    display: grid;
+    gap: 2rem; /* gap-8 */
+    padding-top: 2rem;
+  }
+  @media (min-width: 768px) {
+    .features__container{
+            grid-template-columns:650px;
+            justify-content: center;
+        }
+    /* md breakpoint */
+    .features-section__grid {
+      grid-template-columns: repeat(2, minmax(300px, 1fr)); /* md:grid-cols-2 */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    /* lg breakpoint */
+    .features-section__grid {
+      grid-template-columns: repeat(3, minmax(300px, 1fr)); /* lg:grid-cols-3 */
+    }
+    .features__container{
+            grid-template-columns: initial;
+            justify-content: center;
+        }
+  }
+ 
+
+</style>

@@ -1,0 +1,121 @@
+---
+import IcBaselineWhatsapp from "@/icons/IcBaselineWhatsapp.astro";
+---
+
+<div class="hero__mockup">
+  <div class="hero__mockup-header">
+    <div class="hero__mockup-controls">
+      <div class="hero__mockup-control-dot hero__mockup-control-dot--red"></div>
+      <div class="hero__mockup-control-dot hero__mockup-control-dot--yellow">
+      </div>
+      <div class="hero__mockup-control-dot hero__mockup-control-dot--green">
+      </div>
+    </div>
+    <div class="hero__mockup-url">https://localhost:4321</div>
+  </div>
+  <div class="hero__mockup-browser-content">
+    <div class="hero__mockup-whatsapp-button">
+      <IcBaselineWhatsapp />
+      whatsapp
+    </div>
+  </div>
+  <!-- aqui se renderiza el codigo con la url dinámica -->
+  <div id="url-code" class="hero__mockup-code-display">
+    <code>&lt;link rel="stylesheet" href="../styles/main.css"&gt;</code>
+    <br>
+    <code>&lt;script src="../src/whatsapp.js"&gt;&lt;/script&gt;</code>
+  </div>
+</div>
+
+<style>
+  /* Colores para guía visual - ¡Remueve esto en producción! */
+
+  .hero__mockup {
+    background-color: var(--text-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-width: 600px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: rgb(75 85 99);
+  }
+  .hero__mockup-header{
+    padding: 1rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .hero__mockup-header,
+  .hero__mockup-browser-content {
+    background-color: rgb(243 244 246);
+    border-radius: 0.5rem;
+  }
+  .hero__mockup-browser-content{
+   position: relative;
+  }
+
+  .hero__mockup-browser-content {
+    flex-grow: 1;
+  }
+  .hero__mockup-controls {
+    display: flex;
+    gap: 5px;
+  }
+  .hero__mockup-code-display {
+    background-color: rgb(17 24 39);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    color: rgb(74 222 128);
+    font-size: 0.6rem;
+    padding: 0.5rem;
+  }
+  @media screen and (min-width: 425px) {
+    .hero__mockup-code-display {
+    font-size: 0.9rem;
+  }
+  }
+  .hero__mockup-control-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .hero__mockup-control-dot--red{
+    background-color: rgb(239 68 68);
+  }
+  .hero__mockup-control-dot--yellow{
+    background-color: rgb(234 179 8);
+  }
+  .hero__mockup-control-dot--green{
+    background-color: rgb(34 197 94);
+  }
+  .hero__mockup-whatsapp-button{
+    background-color: rgb(22 163 74);
+    color: var(--text-color);
+    padding: 0.2rem 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  /* rgb(74 222 128) */
+</style>
+
+<script>
+
+    const $urlContainer = document.getElementById("url-code") as HTMLElement;
+    const $url = document.location.href;
+
+
+    const urlJs = `<code>&lt;link rel="stylesheet" href="${$url}whatsapp.css"&gt;</code>`;
+    const urlCss = `<code>&lt;script src="${$url}whatsapp.js"&gt;&lt;/script&gt;</code>`;
+
+    $urlContainer.innerHTML = urlJs + "<br>" + urlCss;
+
+</script>

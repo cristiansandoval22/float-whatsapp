@@ -1,0 +1,130 @@
+---
+import Play from "@/icons/play.astro";
+import ArrowRight from "@/icons/Arrow-right.astro";
+import HeroGraphic from "@/components/HeroGraphic.astro";
+---
+
+<section class="hero">
+  <div class="hero__container container grid">
+    <div class="hero__data">
+      <span class="hero__badge">Widget de WhatsApp Flotante</span>
+      <h1 class="hero__title">
+        Conecta con tus Clientes al
+        <span class="hero__title__span">Instante</span>
+      </h1>
+      <p class="hero__paragraph">
+        Añade un botón de WhatsApp personalizable a tu web. ¡Simple, rápido y
+        efectivo!
+      </p>
+      <p class="hero__paragraph hero__paragraph--secondary">
+        Introduce el widget como una solución sencilla para mejorar la
+        comunicación y el soporte al cliente.
+      </p>
+      <div class="hero__buttons">
+        <a href="#guide" class="hero__button">
+          ¡Empieza Ahora!
+          <ArrowRight class="hero__button__icon" />
+        </a>
+        <a href="#video-demo" class="hero__button hero__button--secondary">
+          <Play class="hero__button__icon" />
+          Ver demo
+        </a>
+      </div>
+    </div>
+    <div class="hero__mockup-col">
+      <HeroGraphic />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero__badge {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 1rem;
+    box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.253);
+    transition: all 0.3s ease;
+  }
+  .hero__badge:hover {
+    box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.438);
+    transform: translateY(-10px);
+  }
+  .hero__title {
+    font-size: 1.9rem;
+  }
+  .hero__title__span {
+    color: var(--accent-color);
+  }
+  .hero__paragraph {
+    margin-block: 0.5rem;
+  }
+  .hero__paragraph--secondary {
+    color: var(--text-color-secondary);
+  }
+  .hero__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block: 2rem;
+  }
+  .hero__button {
+    font-weight: var(--font-medium);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 0.5rem;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+  }
+  .hero__button:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+  }
+
+  .hero__button--secondary {
+    background-color: transparent;
+    color: var(--accent-color);
+  }
+
+  .hero__button--secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+  }
+  @media screen and (min-width: 425px) {
+    .hero__buttons {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .hero__container {
+      grid-template-columns: 650px;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero__container {
+      padding-block: 2rem;
+    }
+    .hero__title{
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .hero__container {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+    }
+    .hero__title{
+      font-size: 3.5rem;
+    }
+    .hero__paragraph{
+      font-size: 1rem;
+    }
+  }
+</style>

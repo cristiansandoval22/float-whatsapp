@@ -1,0 +1,159 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*=============== BASE ===============*/
+
+:root {
+  /*========== Colors ==========*/
+  --body-font: "Poppins", sans-serif;
+  --normal-font-size: 1rem;
+  --text-color: #fff;
+  --text-color-secondary: rgba(255, 255, 255, 0.781);
+  --accent-color: #17a34a;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+
+  /*========== Font size ==========*/
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  color: var(--text-color);
+  background: #020617;
+  background-image: linear-gradient(
+      to right,
+      rgba(71, 85, 105, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(71, 85, 105, 0.3) 1px, transparent 1px),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(139, 92, 246, 0.15) 0%,
+      transparent 70%
+    );
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  background-attachment: fixed;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+span {
+  display: inline;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1220px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-inline: 1rem;
+    margin-inline: auto;
+  }
+}
+
+section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+.section__title span {
+  color: var(--accent-color);
+}
+.section__subtitle {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 340px) {
+  .section__title {
+    font-size: 1.3rem;
+  }
+  .section__subtitle {
+    font-size: var(--small-font-size);
+  }
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+.feature-card__icon {
+  color: var(--accent-color);
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Elemento: code-block__copy-icon */
+.code-block__copy-icon {
+  height: 1rem; /* h-4 */
+  width: 1rem; /* w-4 */
+  flex-shrink: 0; /* shrink-0 */
+  /* pointer-events-none (ya cubierto por el estilo del botón padre si el SVG está dentro) */
+}
+
+.step__code-wrapper__copy__icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+
+::-webkit-scrollbar{
+  display: none;
+}

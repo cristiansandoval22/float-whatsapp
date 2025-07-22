@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Copy from "@/icons/Copy.astro";
+---
+
+<Layout>
+  <section class="container">
+    <h2 class="title">
+      <span class="title__number">1</span>
+      Copia el Script
+    </h2>
+    <p>Personaliza las opciones arriba y copia el código generado</p>
+    <div>
+        <code>
+            <code>&lt;link rel="stylesheet" href="./whatsapp.css"&gt;</code>
+        </code>
+        <code>
+            <code>&lt;script src="./whatsapp.js"&gt;&lt;/script&gt;</code>
+        </code>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .title__number {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

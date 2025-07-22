@@ -1,0 +1,51 @@
+---
+
+---
+
+<section id="video-demo" class="video-demo">
+  <div class="video-demo__container container grid">
+    <div class="video-demo__data">
+      <h2 class="section__title">Demostración del Widget de <span>WhatsApp</span></h2>
+      <p class="section__subtitle">Video Demo</p>
+    </div>
+    <div class="video-demo__mockup-col">
+       <div class="video-demo__mockup">
+        <!-- Aquí debes usar la etiqueta <lite-youtube> -->
+       
+        <!-- https://youtu.be/y-BFrPQPGjM?si=lZP0Ho4GSJFFcXBR -->
+      <div class="video-demo__wrapper">
+        <lite-youtube videoid="y-BFrPQPGjM"></lite-youtube>
+      </div>
+       </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    .video-demo{
+        padding-bottom: 3rem;
+    }
+
+    .video-demo__mockup{
+        border-radius: 0.5rem;
+        border: 3px solid var(--accent-color);
+        overflow: auto;
+        max-width: 700px;
+        margin-inline: auto;
+        padding: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.24);
+        box-shadow: 0 3px 20px 0px rgba(255, 255, 255, 0.253);
+        backdrop-filter: blur(10px);
+    }
+    .video-demo__wrapper{
+        border-radius: 0.25rem;
+        overflow: hidden;
+    }
+
+    @media screen and (min-width: 768px) {
+        .video-demo__container{
+            grid-template-columns:650px;
+            justify-content: center;
+        }
+    }
+</style>

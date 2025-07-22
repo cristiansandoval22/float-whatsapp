@@ -1,0 +1,15 @@
+{
+  "name": "whatsapp-float",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@justinribeiro/lite-youtube": "^1.8.2",
+    "astro": "^5.12.0"
+  }
+}

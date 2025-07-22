@@ -1,0 +1,72 @@
+---
+const { title, description, icon: Icon } = Astro.props;
+---
+
+<div class="feature-card">
+  <div class="feature-card__content">
+    <Icon class="feature-card__icon" />
+    <h3 class="feature-card__title">{title}</h3>
+  </div>
+  <div class="feature-card__description-wrapper">
+    <p class="feature-card__description">
+      {description}
+    </p>
+  </div>
+</div>
+
+<style>
+  
+  /* Bloque: feature-card */
+  .feature-card {
+    border-radius: 0.5rem; 
+    border: 2px solid rgba(90, 236, 144, 0.637); 
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(10px);
+    color: var(--accent-color); 
+    box-shadow: rgba(255, 255, 255, 0.02) 0px 8px 24px;
+    transition: all 0.3s ease; 
+    cursor: auto;
+    user-select: none;
+  }
+
+  .feature-card:hover {
+    box-shadow: rgba(90, 236, 143, 0.205) 0px 8px 24px;
+    border: 2px solid var(--accent-color); 
+  }
+
+  /* Contenido de la tarjeta (icono y título) */
+  .feature-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem; 
+    padding: 1.5rem; 
+    padding-bottom: 0.5rem;
+  }
+
+  /* Título de la tarjeta */
+  .feature-card__title {
+    font-size: 1.5rem; 
+    line-height: 1.25; 
+    letter-spacing: -0.025em; 
+    margin: 0;
+    color: white;
+    margin-bottom: 0.5rem; 
+  }
+
+  /* Contenedor de la descripción (para padding-top: 0) */
+  .feature-card__description-wrapper {
+    padding: 1.5rem; 
+    padding-top: 0; 
+  }
+
+  /* Descripción de la tarjeta */
+  .feature-card__description {
+    font-size: 0.875rem; 
+    color: var(--text-color-secondary); 
+    margin: 0;
+  }
+</style>
